@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather Result</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <% if (weather) { %>
+      <h2>Weather in <%= weather.city %></h2>
+      <p>🌡 Temperature: <%= weather.temperature %> °C</p>
+      <p>☁️ Description: <%= weather.description %></p>
+      <p>💧 Humidity: <%= weather.humidity %>%</p>
+      <p>💨 Wind Speed: <%= weather.windSpeed %> m/s</p>
+      <% } else { %>
+      <h2><%= error %></h2>
+      <% } %>
+
+      <a href="/">🔙 Search Again</a>
+    </div>
+  </body>
+</html>
