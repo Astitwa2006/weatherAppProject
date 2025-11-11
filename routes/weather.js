@@ -1,5 +1,6 @@
 import express from "express";
 import axios from "axios";
+import "dotenv/config"
 
 const router = express.Router();
 const API_KEY = process.env.API_KEY;
@@ -16,7 +17,7 @@ try {
     const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
 
     const weatherData ={
-         city: response.data.name,
+      city: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
